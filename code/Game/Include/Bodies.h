@@ -1,0 +1,30 @@
+#ifndef _BODIES_H_
+#define _BODIES_H_
+
+#include"SDL.h"
+
+class Bodies{
+    public:
+    Bodies(double u, double v, double w, double h, int type, SDL_Renderer* renderer);
+    ~Bodies();
+    bool check_col(Bodies* B);
+    void check_col2(Bodies* B);
+    void display(SDL_Renderer* renderer);
+    void SetColour(int ri, int gi, int bi);
+    void SetVel(double ux, double uy);
+    void moveObs();
+    int health;
+    void move();
+
+    double x,y;
+    double vel_x,vel_y;
+    double wid,hei;
+    
+    private:
+    SDL_Texture * texture;
+    SDL_Surface * image;
+    int type;
+    int r,g,b,o;
+};
+
+#endif
